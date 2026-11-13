@@ -1,0 +1,16 @@
+/* Restrained global overrides: Kadence remains responsible for its own layout. */
+:where(.entry-content) {
+  color: var(--rr-color-ink);
+}
+:where(.entry-content) :where(h1, h2, h3) {
+  font-family: var(--rr-font-display);
+  line-height: 1.16;
+  text-wrap: balance;
+}
+:where(.entry-content) :where(a:not(.rr-button)) {
+  text-underline-offset: .18em;
+}
+:where(.entry-content) :where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--rr-color-gold);
+  outline-offset: 3px;
+}
