@@ -1,0 +1,61 @@
+// Five Things section: assign classes in Kadence Advanced > Additional CSS Class(es).
+.rr-five-things {
+  --rr-five-things-gap: .875rem;
+  color: var(--rr-color-parchment);
+  background-color: var(--rr-color-forest);
+
+  &__eyebrow {
+    color: var(--rr-color-gold);
+    font: 700 .875rem/1.4 var(--rr-font-ui);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: var(--rr-color-parchment);
+    font-family: var(--rr-font-display);
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    line-height: 1.2;
+  }
+
+  // Kadence Row Layout places its actual grid on an inner wrapper.
+  &__grid > .kt-row-column-wrap {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--rr-five-things-gap);
+  }
+
+  &__card {
+    box-sizing: border-box;
+    min-width: 0;
+    height: 100%;
+    padding: 1rem 1.125rem;
+    background: rgb(255 255 255 / 7%);
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: var(--rr-radius-md);
+  }
+
+  &__card-title {
+    color: var(--rr-color-gold);
+    font: 700 .9375rem/1.4 var(--rr-font-ui);
+    margin-block: 0 .5rem;
+  }
+
+  &__card-text {
+    color: var(--rr-color-parchment);
+    font: 400 .9375rem/1.65 var(--rr-font-body);
+    margin: 0;
+  }
+
+  @media (max-width: 64rem) {
+    &__grid > .kt-row-column-wrap {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 47.9375rem) {
+    &__grid > .kt-row-column-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+}
