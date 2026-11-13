@@ -1,0 +1,17 @@
+:root {
+  --rr-color-forest: #204632;
+  --rr-color-bordeaux: #7a2e3a;
+  --rr-color-parchment: #f7f2e7;
+  --rr-color-ink: #2a2620;
+  --rr-color-gold: #c9a86a;
+  --rr-color-white: #fff;
+  --rr-font-display: "Bodoni MT", Didot, Georgia, serif;
+  --rr-font-body: Georgia, "Iowan Old Style", serif;
+  --rr-font-ui: "Helvetica Neue", Arial, sans-serif;
+  --rr-radius-sm: .25rem;
+  --rr-radius-md: .5rem;
+  --rr-radius-lg: 1rem;
+  --rr-shadow-card: 0 10px 28px rgb(42 38 32 / 8%);
+  --rr-container-width: 72rem;
+  --rr-space-section: clamp(3rem, 7vw, 6rem);
+}
