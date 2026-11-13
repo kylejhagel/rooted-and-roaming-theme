@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "description": "Kadence child theme with Sass components",
   "scripts": {
-    "build": "sass --no-source-map --style=compressed src/scss/main.scss assets/css/theme.css",
-    "dev": "sass --watch src/scss/main.scss:assets/css/theme.css",
-    "build:check": "sass --no-source-map --style=compressed src/scss/main.scss assets/css/theme.css"
+    "build": "sass --no-source-map --style=expanded src/scss/main.scss assets/css/theme.css",
+    "dev": "sass --watch --style=expanded src/scss/main.scss:assets/css/theme.css",
+    "build:check": "sass --no-source-map --style=expanded src/scss/main.scss assets/css/theme.css"
   },
   "devDependencies": {
     "sass": "^1.93.0"
