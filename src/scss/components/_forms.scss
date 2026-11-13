@@ -1,0 +1,15 @@
+.rr-field {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: .7rem .85rem;
+  background: #fff;
+  color: var(--rr-color-ink);
+  border: 1px solid #a89b85;
+  border-radius: var(--rr-radius-sm);
+  font: 1rem/1.5 var(--rr-font-ui);
+}
+.rr-field:focus-visible {
+  outline: 3px solid var(--rr-color-gold);
+  outline-offset: 2px;
+}
+.rr-form__label { display: block; margin-block-end: .35rem; font: 700 .875rem var(--rr-font-ui); }
