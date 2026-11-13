@@ -1,0 +1,30 @@
+/* Tailwind-inspired button API; pair with Kadence Button block > Advanced > CSS class. */
+.rr-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 2.75rem;
+  padding: .75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--rr-radius-sm);
+  font-family: var(--rr-font-ui);
+  font-size: .875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .06em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.rr-button--primary { color: #fff; background-color: var(--rr-color-bordeaux); }
+.rr-button--primary:hover { color: #fff; background-color: #62232e; }
+.rr-button--outline {
+  color: var(--rr-color-parchment);
+  background: transparent;
+  border-color: currentColor;
+}
+.rr-button--outline:hover { background: rgb(255 255 255 / 12%); }
+@media (prefers-reduced-motion: reduce) {
+  .rr-button { transition: none; }
+}
