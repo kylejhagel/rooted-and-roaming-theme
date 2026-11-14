@@ -205,54 +205,62 @@
   font: 700 0.875rem var(--rr-font-ui);
 }
 
-.rr-five-things {
-  --rr-five-things-gap: .875rem;
+.wp-block-kadence-rowlayout.rr-five-things {
+  --rr-five-things-gap: 0.875rem;
   color: var(--rr-color-parchment);
   background-color: var(--rr-color-forest);
 }
-.rr-five-things__eyebrow {
+.wp-block-kadence-rowlayout.rr-five-things .rr-five-things__eyebrow {
   color: var(--rr-color-gold);
   font: 700 0.875rem/1.4 var(--rr-font-ui);
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-.rr-five-things__title {
+.wp-block-kadence-rowlayout.rr-five-things :is(h1, h2, h3).rr-five-things__title {
   color: var(--rr-color-parchment);
   font-family: var(--rr-font-display);
   font-size: clamp(2rem, 3vw, 2.75rem);
   line-height: 1.2;
 }
-.rr-five-things__grid > .kt-row-column-wrap {
+.wp-block-kadence-rowlayout.rr-five-things .wp-block-kadence-rowlayout.rr-five-things__grid > .kt-row-column-wrap {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--rr-five-things-gap);
 }
-.rr-five-things__card {
-  box-sizing: border-box;
+.wp-block-kadence-rowlayout.rr-five-things .wp-block-kadence-column.rr-five-things__card {
   min-width: 0;
+  height: 100%;
+}
+.wp-block-kadence-rowlayout.rr-five-things .wp-block-kadence-column.rr-five-things__card > .kt-inside-inner-col {
+  box-sizing: border-box;
   height: 100%;
   padding: 1rem 1.125rem;
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--rr-radius-md);
 }
-.rr-five-things__card-title {
+.wp-block-kadence-rowlayout.rr-five-things :is(h2, h3, h4).rr-five-things__card-title {
   color: var(--rr-color-gold);
-  font: 700 0.9375rem/1.4 var(--rr-font-ui);
+  font-family: var(--rr-font-ui);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.4;
   margin-block: 0 0.5rem;
 }
-.rr-five-things__card-text {
+.wp-block-kadence-rowlayout.rr-five-things p.rr-five-things__card-text {
   color: var(--rr-color-parchment);
-  font: 400 0.9375rem/1.65 var(--rr-font-body);
+  font-family: var(--rr-font-body);
+  font-size: 0.9375rem;
+  line-height: 1.65;
   margin: 0;
 }
 @media (max-width: 64rem) {
-  .rr-five-things__grid > .kt-row-column-wrap {
+  .wp-block-kadence-rowlayout.rr-five-things .wp-block-kadence-rowlayout.rr-five-things__grid > .kt-row-column-wrap {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media (max-width: 47.9375rem) {
-  .rr-five-things__grid > .kt-row-column-wrap {
+  .wp-block-kadence-rowlayout.rr-five-things .wp-block-kadence-rowlayout.rr-five-things__grid > .kt-row-column-wrap {
     grid-template-columns: 1fr;
   }
 }
