@@ -272,3 +272,67 @@
     grid-template-columns: 1fr;
   }
 }
+
+.wp-block-kadence-rowlayout.rr-journey-trail > .kt-row-column-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem 1.75rem;
+}
+.wp-block-kadence-rowlayout.rr-journey-trail > .kt-row-column-wrap > .wp-block-kadence-column {
+  position: relative;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+}
+.wp-block-kadence-rowlayout.rr-journey-trail > .kt-row-column-wrap > .wp-block-kadence-column > .kt-inside-inner-col {
+  padding: 0;
+}
+.wp-block-kadence-rowlayout.rr-journey-trail .rr-pill {
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--rr-color-gold);
+  border-radius: 999px;
+  background: var(--rr-color-white);
+  color: var(--rr-color-ink);
+  font: 400 0.8125rem/1.4 var(--rr-font-ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.wp-block-kadence-rowlayout.rr-journey-trail .rr-pill-last {
+  border-color: var(--rr-color-forest);
+  background: var(--rr-color-forest);
+  color: var(--rr-color-white);
+}
+.wp-block-kadence-rowlayout.rr-journey-trail > .kt-row-column-wrap > .wp-block-kadence-column:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: -1.125rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-top: 1px solid var(--rr-color-gold);
+  border-right: 1px solid var(--rr-color-gold);
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+}
+@media (max-width: 40rem) {
+  .wp-block-kadence-rowlayout.rr-journey-trail > .kt-row-column-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .wp-block-kadence-rowlayout.rr-journey-trail > .kt-row-column-wrap > .wp-block-kadence-column:not(:last-child)::after {
+    inset-inline-end: auto;
+    inset-inline-start: 1.25rem;
+    top: auto;
+    bottom: -0.875rem;
+    transform: rotate(135deg);
+  }
+}
