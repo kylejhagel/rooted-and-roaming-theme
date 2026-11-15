@@ -46,3 +46,31 @@ These are intentionally original styles informed by common Tailwind utility/comp
 4. Have Sally approve visual/content changes before production deployment.
 
 **Do not commit** credentials, database dumps, customer information, WordPress uploads, or unapproved private client source files.
+
+## Post cards (Kadence Posts block)
+
+Add `rr-postcards` to the **Posts block wrapper** under Advanced > Additional
+CSS class(es). Use the block's post-selection controls to choose the posts and
+its layout controls to set columns and responsive behavior. This adapter targets
+Kadence's `article.loop-entry` markup, not the core Query Loop / Post Template.
+Do not apply the class to an entire page or a wrapper containing unrelated loops.
+
+The theme styles category links, linked titles, excerpts, optional author/date,
+and the existing Read More link. Disable author/date or featured images in the
+block settings when they are unwanted. Screen-reader text and Kadence's SVG arrow
+are retained. All overrides are scoped to `rr-postcards`; other archives and the
+RRPG plugin remain unchanged. Preview the frontend; editor parity is not provided
+by the theme's existing frontend-only stylesheet enqueue.
+
+Cards use the existing theme tokens, card border, radius, and shadow. These are
+an approximation of the supplied RRPG design: the original RRPG CSS was not
+available for exact comparison, so no plugin stylesheet is imported or modified.
+When that source is available, compare values before extracting shared Sass
+mixins; avoid coupling separate plugin and theme build pipelines.
+
+Review in Kadence Preview: selected posts, one and multiple columns, 320px mobile,
+long titles, absent categories, short/long excerpts, author/date on and off,
+featured images on and off, keyboard focus, and 200% zoom. Read More aligns at the
+bottom when the parent grid stretches cards to equal row heights. Kadence remains
+responsible for image rendering and the grid. Per-block typography, color, or
+spacing overrides may need clearing if they take precedence over these styles.

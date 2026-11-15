@@ -1,0 +1,125 @@
+// Opt in on the Kadence Posts block wrapper with rr-postcards.
+// Kadence owns post selection, the grid, and responsive column counts.
+.rr-postcards {
+  article.loop-entry {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--rr-color-white);
+    color: var(--rr-color-ink);
+    border: 1px solid #e6ddc9;
+    border-radius: var(--rr-radius-md);
+    box-shadow: var(--rr-shadow-card);
+  }
+
+  article.loop-entry > .entry-content-wrap {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  .loop-entry .entry-header {
+    margin: 0 0 .875rem;
+  }
+
+  .loop-entry .entry-taxonomies {
+    margin: 0 0 .625rem;
+    color: var(--rr-color-bordeaux);
+    font: 700 .75rem/1.4 var(--rr-font-ui);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .loop-entry .entry-title {
+    margin: 0;
+    color: var(--rr-color-forest);
+    font-family: var(--rr-font-display);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .loop-entry .entry-meta {
+    margin-top: .75rem;
+    color: var(--rr-color-ink);
+    font: 400 .8125rem/1.6 var(--rr-font-body);
+  }
+
+  .loop-entry .entry-summary {
+    margin: 0 0 1.25rem;
+    color: var(--rr-color-ink);
+    font: 400 1rem/1.65 var(--rr-font-body);
+    overflow-wrap: anywhere;
+
+    > :first-child { margin-top: 0; }
+    > :last-child { margin-bottom: 0; }
+  }
+
+  .loop-entry .entry-footer {
+    margin-top: auto;
+    padding: 0;
+    border: 0;
+  }
+
+  .loop-entry .more-link-wrap {
+    margin: 0;
+  }
+
+  .loop-entry .post-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    min-height: 2.75rem;
+    padding: .5rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--rr-color-bordeaux);
+    font: 700 .8125rem/1.4 var(--rr-font-ui);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--rr-color-forest);
+      text-decoration: underline;
+    }
+
+    .kadence-svg-iconset {
+      display: inline-flex;
+      flex-shrink: 0;
+    }
+
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  .loop-entry a:focus-visible {
+    outline: 2px solid var(--rr-color-forest);
+    outline-offset: 3px;
+  }
+}
