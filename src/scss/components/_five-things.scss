@@ -3,7 +3,15 @@
 .wp-block-kadence-rowlayout.rr-five-things {
   --rr-five-things-gap: .875rem;
   color: var(--rr-color-parchment);
-  background-color: var(--rr-color-forest);
+  background: var(--rr-color-forest);
+
+  .wp-block-kadence-column {
+    padding: 0;
+
+    > .kt-inside-inner-col {
+      padding: 0;
+    }
+  }
 
   .rr-five-things__eyebrow {
     color: var(--rr-color-gold);
@@ -13,7 +21,7 @@
   }
 
   :is(h1, h2, h3).rr-five-things__title {
-    color: var(--rr-color-parchment);
+    color: var(--rr-color-white);
     font-family: var(--rr-font-display);
     font-size: clamp(2rem, 3vw, 2.75rem);
     line-height: 1.2;
@@ -37,7 +45,7 @@
       box-sizing: border-box;
       height: 100%;
       padding: 1rem 1.125rem;
-      background: rgb(255 255 255 / 7%);
+      background: var(--rr-bg-transparency);
       border: 1px solid rgb(255 255 255 / 18%);
       border-radius: var(--rr-radius-md);
     }
@@ -53,7 +61,7 @@
   }
 
   p.rr-five-things__card-text {
-    color: var(--rr-color-parchment);
+    color: var(--rr-color-white);
     font-family: var(--rr-font-body);
     font-size: .9375rem;
     line-height: 1.65;

@@ -4,3 +4,8 @@ node_modules/
 .env
 .env.*
 !/.env.example
+
+# Generated development sourcemaps
+/assets/css/*.css.map
+# Local Kadence demo thumbnail; replace with a branded preview before tracking
+/screenshot.png
