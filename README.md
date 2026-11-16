@@ -74,3 +74,27 @@ featured images on and off, keyboard focus, and 200% zoom. Read More aligns at t
 bottom when the parent grid stretches cards to equal row heights. Kadence remains
 responsible for image rendering and the grid. Per-block typography, color, or
 spacing overrides may need clearing if they take precedence over these styles.
+
+## Journey Trail
+
+Use the existing Kadence Row Layout with one column per stage. Add
+`rr-journey-trail` to the **outer Row Layout block** under Advanced > Additional
+CSS class(es). Kadence generates the inner `.kt-row-column-wrap`; no manual
+markup changes are needed.
+
+Keep paragraph classes `rr-pill rr-pill-primary` on regular stages and
+`rr-pill rr-pill-last` on the highlighted destination. Labels and columns remain
+editable using Kadence. The actual final column determines where arrows stop;
+`rr-pill-last` controls appearance only and can be moved independently.
+
+The component replaces the equal-column grid with content-sized pills. It wraps
+at larger widths and stacks vertically at 40rem and below. Long labels wrap.
+Arrows are decorative CSS shapes, and the paragraphs remain noninteractive.
+All rules are scoped to this Row Layout; these pill classes outside the trail
+are unaffected. Existing theme tokens supply the colors and fonts.
+
+Review on Kadence staging: default six stages, one stage, extra stages, long
+labels, 320px mobile width, tablet, desktop, and 200% zoom. Confirm arrow order,
+no overflow, and no changes to other rows. The theme enqueues styles on the
+frontend, so use Preview to review appearance. Remove conflicting per-block
+width, spacing, or color overrides in Kadence if they override theme styles.

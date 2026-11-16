@@ -1,0 +1,74 @@
+// Add rr-journey-trail to the outer Kadence Row Layout block.
+.wp-block-kadence-rowlayout.rr-journey-trail {
+  > .kt-row-column-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .75rem 1.75rem;
+  }
+
+  > .kt-row-column-wrap > .wp-block-kadence-column {
+    position: relative;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  > .kt-row-column-wrap > .wp-block-kadence-column > .kt-inside-inner-col {
+    padding: 0;
+  }
+
+  .rr-pill {
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    padding: .5rem .875rem;
+    border: 1px solid var(--rr-color-gold);
+    border-radius: 999px;
+    background: var(--rr-color-white);
+    color: var(--rr-color-ink);
+    font: 400 .8125rem/1.4 var(--rr-font-ui);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  .rr-pill-last {
+    border-color: var(--rr-color-forest);
+    background: var(--rr-color-forest);
+    color: var(--rr-color-white);
+  }
+
+  // A drawn arrow avoids adding spoken punctuation to the paragraph text.
+  > .kt-row-column-wrap > .wp-block-kadence-column:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: -1.125rem;
+    top: 50%;
+    width: .5rem;
+    height: .5rem;
+    border-top: 1px solid var(--rr-color-gold);
+    border-right: 1px solid var(--rr-color-gold);
+    transform: translateY(-50%) rotate(45deg);
+    pointer-events: none;
+  }
+
+  @media (max-width: 40rem) {
+    > .kt-row-column-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    > .kt-row-column-wrap > .wp-block-kadence-column:not(:last-child)::after {
+      inset-inline-end: auto;
+      inset-inline-start: 1.25rem;
+      top: auto;
+      bottom: -.875rem;
+      transform: rotate(135deg);
+    }
+  }
+}
