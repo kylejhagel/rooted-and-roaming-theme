@@ -296,11 +296,7 @@
   margin: 0 0 0.875rem;
 }
 .rr-postcards .loop-entry .entry-taxonomies {
-  margin: 0 0 0.625rem;
   color: var(--rr-color-bordeaux);
-  font: 700 0.75rem/1.4 var(--rr-font-ui);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 .rr-postcards .loop-entry .entry-taxonomies a {
   color: inherit;
@@ -379,4 +375,16 @@
 .rr-postcards .loop-entry a:focus-visible {
   outline: 2px solid var(--rr-color-forest);
   outline-offset: 3px;
+}
+
+.rrpg__eyebrow,
+.rr-postcards .loop-entry .entry-taxonomies a {
+  font: 500 0.72rem/1.5 system-ui, sans-serif;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.rrpg__eyebrow,
+.rr-postcards .loop-entry .entry-taxonomies {
+  margin: 0 0 5px;
 }

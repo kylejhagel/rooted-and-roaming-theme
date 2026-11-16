@@ -27,11 +27,7 @@
   }
 
   .loop-entry .entry-taxonomies {
-    margin: 0 0 .625rem;
     color: var(--rr-color-bordeaux);
-    font: 700 .75rem/1.4 var(--rr-font-ui);
-    letter-spacing: .12em;
-    text-transform: uppercase;
 
     a {
       color: inherit;
@@ -122,4 +118,18 @@
     outline: 2px solid var(--rr-color-forest);
     outline-offset: 3px;
   }
+}
+
+// Shared typography across the separately built RRPG plugin and Kadence cards.
+.rrpg__eyebrow,
+.rr-postcards .loop-entry .entry-taxonomies a {
+  font: 500 .72rem/1.5 system-ui, sans-serif;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+// Category links are inline; apply vertical spacing to their wrapper.
+.rrpg__eyebrow,
+.rr-postcards .loop-entry .entry-taxonomies {
+  margin: 0 0 5px;
 }
