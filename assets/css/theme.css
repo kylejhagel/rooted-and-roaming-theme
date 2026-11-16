@@ -378,6 +378,7 @@
 }
 
 .rrpg__eyebrow,
+.rr-postcards .loop-entry .entry-taxonomies .category-links,
 .rr-postcards .loop-entry .entry-taxonomies a {
   font: 500 0.72rem/1.5 system-ui, sans-serif;
   letter-spacing: 0.09em;
