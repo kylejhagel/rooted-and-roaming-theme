@@ -39,13 +39,11 @@
     }
   }
 
-  .loop-entry .entry-title {
+  h2.entry-title {
     margin: 0;
-    color: var(--rr-color-forest);
-    font-family: var(--rr-font-display);
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    font-weight: 700;
-    line-height: 1.2;
+    font: 700 1.05rem/1.4 system-ui, sans-serif;
+    color: var(--rr-color-bordeaux);
+    margin: 0 0 10px;
     overflow-wrap: anywhere;
 
     a {
@@ -85,22 +83,34 @@
   }
 
   .loop-entry .post-more-link {
+    font-family: Georgia, 'serif';
+    font-size: .875rem;
+    line-height: 1.5;
+    font-weight: normal;
+    text-align: center;
+    color: var(--rr-color-white);
+    text-decoration: none;
+    text-transform: none;
+
     display: inline-flex;
     align-items: center;
-    gap: .5rem;
-    min-height: 2.75rem;
-    padding: .5rem 0;
+    justify-content: center;
+    gap: 0;
+    margin-top: auto;
+    
+    
+    padding: .45em .85em;   
+    
+        
+    border-radius: 3px;
     border: 0;
-    background: transparent;
-    color: var(--rr-color-bordeaux);
-    font: 700 .8125rem/1.4 var(--rr-font-ui);
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    text-decoration: none;
+    background: var(--global-palette-btn-bg);
+    
+    
 
     &:hover {
-      color: var(--rr-color-forest);
-      text-decoration: underline;
+      color: var(--global-palette-btn-hover);
+      background: var(--global-palette-btn-bg-hover);
     }
 
     .kadence-svg-iconset {
@@ -127,6 +137,7 @@
   font: 500 .72rem/1.5 system-ui, sans-serif;
   letter-spacing: .09em;
   text-transform: uppercase;
+  color: var(--rr-color-ink);
 }
 
 // Category links are inline; apply vertical spacing to their wrapper.
