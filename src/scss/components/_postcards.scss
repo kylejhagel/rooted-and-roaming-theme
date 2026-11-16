@@ -19,7 +19,7 @@
     flex: 1;
     flex-direction: column;
     min-width: 0;
-    padding: clamp(1.25rem, 2.5vw, 2rem);
+    padding: 17px;
   }
 
   .loop-entry .entry-header {
@@ -39,7 +39,7 @@
     }
   }
 
-  h2.entry-title {
+  h4.entry-title {
     margin: 0;
     font: 700 1.05rem/1.4 system-ui, sans-serif;
     color: var(--rr-color-bordeaux);
