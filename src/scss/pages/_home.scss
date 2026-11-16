@@ -1,0 +1,40 @@
+// Opt-in classes for OUTER Kadence Row Layout blocks on the homepage.
+// WordPress supplies .home; .front-page also supports an explicitly added class.
+// Only immediate row wrappers are styled; nested components own their layout.
+body:is(.home, .front-page) {
+  .wp-block-kadence-rowlayout.rr-home-section {
+    --rr-home-section-space: var(--rr-space-section);
+    --rr-home-section-gap: clamp(1.5rem, 4vw, 3rem);
+
+    > .kt-row-column-wrap {
+      padding-block: var(--rr-home-section-space);
+      row-gap: var(--rr-home-section-gap);
+    }
+
+    // Combine a section name with rr-home-section on the same row.
+    &.rr-home-hero {
+      --rr-home-section-space: clamp(4rem, 9vw, 8rem);
+
+      background-color: var(--rr-color-forest);
+      color: var(--rr-color-parchment);
+    }
+
+    &.rr-home-intro {
+      background-color: var(--rr-color-parchment);
+      color: var(--rr-color-ink);
+    }
+
+    &.rr-home-journal {
+      background-color: var(--rr-color-white);
+      color: var(--rr-color-ink);
+    }
+
+    &.rr-home-cta {
+      --rr-home-section-space: clamp(2.5rem, 6vw, 5rem);
+
+      background-color: var(--rr-color-parchment);
+      color: var(--rr-color-ink);
+      border-block-start: 1px solid var(--rr-color-gold);
+    }
+  }
+}
