@@ -9,6 +9,7 @@ A **WordPress/Kadence child theme** with a Sass source tree and opt-in, Tailwind
 - `src/scss/base/`: design tokens (CSS custom properties) and restrained global HTML element rules.
 - `src/scss/components/`: opt-in, `rr-` prefixed component classes.
 - `src/scss/utilities/`: minimal layout utilities.
+- `src/scss/pages/`: opt-in page-specific styles, scoped to WordPress body classes.
 - `src/scss/main.scss`: Sass module entrypoint using `@use`.
 - `assets/css/theme.css`: compiled asset committed for production; no Node runtime required on Hostinger.
 
@@ -74,6 +75,40 @@ featured images on and off, keyboard focus, and 200% zoom. Read More aligns at t
 bottom when the parent grid stretches cards to equal row heights. Kadence remains
 responsible for image rendering and the grid. Per-block typography, color, or
 spacing overrides may need clearing if they take precedence over these styles.
+
+## Homepage sections
+
+`src/scss/pages/_home.scss` is loaded after reusable components. In Kadence,
+select an **outer Row Layout block**, open Advanced > Additional CSS class(es),
+and add the base class plus one optional section class:
+
+| Classes on the Row Layout | Appearance |
+| --- | --- |
+| `rr-home-section rr-home-hero` | Forest background, parchment text, generous fluid spacing |
+| `rr-home-section rr-home-intro` | Parchment background and ink text |
+| `rr-home-section rr-home-journal` | White background and ink text |
+| `rr-home-section rr-home-cta` | Parchment background, gold top border, compact fluid spacing |
+| `rr-home-section` | Section spacing only; retain Kadence colors |
+
+WordPress supplies `body.home` for the front page (including a posts front page).
+`body.front-page` is also supported if explicitly supplied by your setup; it is
+not a standard WordPress body class. These classes have no effect on other pages.
+No block content is changed automatically.
+
+The base class controls vertical padding and row gap on the row's immediate
+`.kt-row-column-wrap`. Kadence still controls columns, horizontal gutters,
+content width, background images, and responsive stacking. Keep Five Things,
+Journey Trail, and other reusable components in their own nested rows; do not
+add homepage section classes to those component rows. No component selectors,
+headings, links, or buttons are overridden. Explicit block typography colors
+still take precedence over inherited section text colors.
+
+Adjust section values in `_home.scss`; `--rr-home-section-space` and
+`--rr-home-section-gap` allow per-section spacing changes. Clear conflicting
+Kadence row padding/background controls if they override the theme. Rebuild
+with `npm run build` after changes. Use frontend Preview (the theme does not
+enqueue these styles in the editor) to check each section at 320px, tablet,
+desktop, and 200% zoom, plus nested Five Things and a non-home page.
 
 ## Journey Trail
 
