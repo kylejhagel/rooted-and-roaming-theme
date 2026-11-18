@@ -466,7 +466,8 @@
   --rr-form-placeholder: #655d51;
   --rr-form-accent: var(--rr-color-bordeaux);
   --rr-form-accent-hover: #62232e;
-  --rr-form-focus: var(--rr-color-gold);
+  --rr-form-focus: #80520b;
+  --rr-form-focus-text: #80520b;
   --rr-form-error: #9f2539;
   display: grid;
   gap: 1.25rem;
@@ -489,6 +490,7 @@
   --rr-form-accent: #155dfb;
   --rr-form-accent-hover: #1d4ed8;
   --rr-form-focus: #93c5fd;
+  --rr-form-focus-text: #bfdbfe;
   --rr-form-error: #fecaca;
 }
 
@@ -540,10 +542,16 @@
   border-color: var(--rr-form-focus);
 }
 
+.rr_contact_form_wrapper input.rr-field:focus,
 .rr_contact_form_wrapper input.rr-field:focus-visible {
   border-color: var(--rr-form-focus);
-  outline: 2px solid var(--rr-form-focus);
+  outline: 3px solid var(--rr-form-focus);
   outline-offset: 2px;
+  box-shadow: 0 0 0 1px var(--rr-form-field-bg);
+}
+
+.rr_contact_form_wrapper .rr_contact_form_field:focus-within .rr-form__label {
+  color: var(--rr-form-focus-text);
 }
 
 .rr_contact_form_wrapper input.rr-field.wpcf7-not-valid {
@@ -585,6 +593,7 @@
   color: #fff;
 }
 
+.rr_contact_form_wrapper input.wpcf7-submit:focus,
 .rr_contact_form_wrapper input.wpcf7-submit:focus-visible {
   outline: 3px solid var(--rr-form-focus);
   outline-offset: 3px;
