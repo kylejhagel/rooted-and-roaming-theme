@@ -143,12 +143,13 @@
 
 @media (min-width: 48rem) {
   .rr_contact_form_wrapper.rr-contact-form--inline {
-    max-width: 48rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
+    max-width: 60rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) max-content;
+    align-items: end;
   }
 
   .rr_contact_form_wrapper.rr-contact-form--inline > .rr_contact_form_actions {
-    grid-column: 1 / -1;
+    grid-column: auto;
+    align-self: end;
   }
 }
