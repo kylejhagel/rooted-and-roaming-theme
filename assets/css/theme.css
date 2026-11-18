@@ -457,3 +457,42 @@
     transform: rotate(135deg);
   }
 }
+
+.rr_contact_form_wrapper {
+  width: 100%;
+}
+.rr_contact_form_wrapper > .rr_contact_form_field {
+  min-width: 0;
+}
+.rr_contact_form_wrapper .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+}
+.rr_contact_form_wrapper .rr-field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+.rr_contact_form_wrapper.rr_contact_form--stacked,
+.rr_contact_form_wrapper.rr_contact_form--inline {
+  display: grid;
+  gap: 1rem;
+}
+.rr_contact_form_wrapper.rr_contact_form--stacked {
+  grid-template-columns: minmax(0, 1fr);
+}
+.rr_contact_form_wrapper.rr_contact_form--inline {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.5rem;
+}
+.rr_contact_form_wrapper.rr_contact_form--inline > .rr_contact_form_field--full {
+  grid-column: 1/-1;
+}
+@media (max-width: 47.9375rem) {
+  .rr_contact_form_wrapper.rr_contact_form--inline {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rr_contact_form_wrapper.rr_contact_form--inline > .rr_contact_form_field--full {
+    grid-column: auto;
+  }
+}
