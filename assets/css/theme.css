@@ -459,12 +459,15 @@
 }
 
 .rr_contact_form_wrapper {
-  --rr-form-bg: #030712;
-  --rr-form-field-bg: #1f2937;
-  --rr-form-border: #374151;
-  --rr-form-text: #f9fafb;
-  --rr-form-placeholder: #9ca3af;
-  --rr-form-accent: #155dfb;
+  --rr-form-text: var(--rr-color-ink);
+  --rr-form-input-text: var(--rr-color-ink);
+  --rr-form-field-bg: #fff;
+  --rr-form-border: #a89b85;
+  --rr-form-placeholder: #655d51;
+  --rr-form-accent: var(--rr-color-bordeaux);
+  --rr-form-accent-hover: #62232e;
+  --rr-form-focus: var(--rr-color-gold);
+  --rr-form-error: #9f2539;
   display: grid;
   gap: 1.25rem;
   box-sizing: border-box;
@@ -472,10 +475,23 @@
   max-width: 24rem;
   margin-inline: auto;
   padding: 1.25rem;
-  background: var(--rr-form-bg);
+  background: transparent;
   color: var(--rr-form-text);
   border-radius: var(--rr-radius-md);
 }
+
+.rr_contact_form_wrapper.rr-contact-form--dark {
+  --rr-form-text: #f9fafb;
+  --rr-form-input-text: #f9fafb;
+  --rr-form-field-bg: #1f2937;
+  --rr-form-border: #6b7280;
+  --rr-form-placeholder: #d1d5db;
+  --rr-form-accent: #155dfb;
+  --rr-form-accent-hover: #1d4ed8;
+  --rr-form-focus: #93c5fd;
+  --rr-form-error: #fecaca;
+}
+
 .rr_contact_form_wrapper .rr_contact_form_field {
   display: grid;
   gap: 0.625rem;
@@ -489,8 +505,8 @@
 }
 .rr_contact_form_wrapper .wpcf7-form-control-wrap {
   display: block;
-  width: 100%;
   min-width: 0;
+  width: 100%;
 }
 .rr_contact_form_wrapper input.rr-field {
   display: block;
@@ -501,7 +517,7 @@
   border: 1px solid var(--rr-form-border);
   border-radius: 0.75rem;
   background: var(--rr-form-field-bg);
-  color: var(--rr-form-text);
+  color: var(--rr-form-input-text);
   box-shadow: 0 1px 2px rgb(0 0 0 / 12%);
   font: 400 0.875rem/1.5 var(--rr-font-ui);
 }
@@ -515,20 +531,20 @@
   opacity: 1;
 }
 .rr_contact_form_wrapper input.rr-field:hover {
-  border-color: #6b7280;
+  border-color: var(--rr-form-focus);
 }
 .rr_contact_form_wrapper input.rr-field:focus-visible {
-  border-color: #93c5fd;
-  outline: 2px solid #93c5fd;
+  border-color: var(--rr-form-focus);
+  outline: 2px solid var(--rr-form-focus);
   outline-offset: 2px;
 }
 .rr_contact_form_wrapper input.rr-field.wpcf7-not-valid {
-  border-color: #fca5a5;
+  border-color: var(--rr-form-error);
 }
 .rr_contact_form_wrapper .wpcf7-not-valid-tip {
   display: block;
   margin-block-start: 0.35rem;
-  color: #fecaca;
+  color: var(--rr-form-error);
   font: 0.875rem/1.4 var(--rr-font-ui);
 }
 .rr_contact_form_wrapper .rr_contact_form_actions {
@@ -553,11 +569,11 @@
   cursor: pointer;
 }
 .rr_contact_form_wrapper input.wpcf7-submit:hover {
-  background: #1d4ed8;
+  background: var(--rr-form-accent-hover);
   color: #fff;
 }
 .rr_contact_form_wrapper input.wpcf7-submit:focus-visible {
-  outline: 3px solid #93c5fd;
+  outline: 3px solid var(--rr-form-focus);
   outline-offset: 3px;
 }
 .rr_contact_form_wrapper input.wpcf7-submit:disabled {
