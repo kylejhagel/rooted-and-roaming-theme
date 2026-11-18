@@ -607,3 +607,18 @@
 .wpcf7:has(.rr_contact_form_wrapper) .wpcf7-spinner {
   margin: 0.5rem 0;
 }
+
+.rr_contact_form_wrapper.rr-contact-form--full {
+  max-width: none;
+}
+
+@media (min-width: 48rem) {
+  .rr_contact_form_wrapper.rr-contact-form--inline {
+    max-width: 48rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  .rr_contact_form_wrapper.rr-contact-form--inline > .rr_contact_form_actions {
+    grid-column: 1/-1;
+  }
+}
