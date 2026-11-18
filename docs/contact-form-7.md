@@ -42,6 +42,35 @@ Large: add `class:rr-field--lg` (16px / minimum height 52px), e.g.:
 
 Input size and appearance are independent. IDs must be unique on each page.
 
+
+## Layout modifiers
+
+Apply these classes **on the same `div`** as `.rr_contact_form_wrapper`. They are independent of the light/dark appearance and field-size classes.
+
+| Layout | Wrapper | Behavior |
+| --- | --- | --- |
+| Stacked (default) | `rr_contact_form_wrapper` | Single column; centered max-width 24rem |
+| Inline | `rr_contact_form_wrapper rr-contact-form--inline` | Two columns at 48rem and wider; stacked below 48rem; submit row spans both columns |
+| Full-width stacked | `rr_contact_form_wrapper rr-contact-form--full` | One column filling the available Kadence section width |
+
+Examples:
+
+```html
+<div class="rr_contact_form_wrapper rr-contact-form--inline rr-contact-form--dark">
+  <!-- Same field and submit markup as above -->
+</div>
+```
+
+```html
+<div class="rr_contact_form_wrapper rr-contact-form--full">
+  <!-- Same field and submit markup as above -->
+</div>
+```
+
+The `--inline` and `--full` classes are **alternative layouts**; do not combine them. Use one light/dark appearance modifier at most. Form input sizes (`rr-field--lg`) remain independent.
+
+Check at 320px, 767px, 768px, desktop, and 200% zoom; ensure labels and error messages stay with their fields and the submit row stays below them. The parent Kadence block determines available width.
+
 ## reCAPTCHA v3
 
 Configure Google reCAPTCHA v3 keys through **Contact → Integration → reCAPTCHA**. No form tag is needed. Keep development and production keys separate and out of source control. Validate actual submissions; scoring-based filtering does not guarantee zero spam.
