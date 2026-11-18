@@ -461,41 +461,94 @@
 .rr_contact_form_wrapper {
   display: grid;
   gap: 1.25rem;
-  max-width: 42rem;
+  width: 100%;
+  max-width: 28rem;
+  margin-inline: auto;
 }
+
 .rr_contact_form_wrapper .rr_contact_form_field {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.625rem;
+  min-width: 0;
 }
+
 .rr_contact_form_wrapper .rr-form__label {
-  margin-block-end: 0;
+  margin: 0;
+  color: var(--rr-color-ink);
+  font: 600 0.875rem/1.4 var(--rr-font-ui);
 }
+
 .rr_contact_form_wrapper .wpcf7-form-control-wrap {
   display: block;
+  min-width: 0;
   width: 100%;
 }
+
 .rr_contact_form_wrapper .rr-field {
   display: block;
   box-sizing: border-box;
   width: 100%;
+  min-height: 2.625rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #b8b3a8;
+  border-radius: var(--rr-radius-sm);
+  background: var(--rr-color-parchment);
+  color: var(--rr-color-ink);
+  box-shadow: 0 1px 2px rgb(42 38 32 / 6%);
+  font: 400 0.875rem/1.5 var(--rr-font-ui);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.rr_contact_form_wrapper .rr-field--lg {
+  min-height: 3.25rem;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+}
+
+.rr_contact_form_wrapper .rr-field::placeholder {
+  color: #746d63;
+  opacity: 1;
+}
+
+.rr_contact_form_wrapper .rr-field:hover {
+  border-color: var(--rr-color-forest);
+}
+
+.rr_contact_form_wrapper .rr-field:focus-visible {
+  border-color: var(--rr-color-forest);
+  outline: 2px solid var(--rr-color-gold);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgb(201 168 106 / 22%);
+}
+
 .rr_contact_form_wrapper .wpcf7-not-valid {
   border-color: var(--rr-color-bordeaux);
 }
+
 .rr_contact_form_wrapper .wpcf7-not-valid-tip {
   display: block;
   margin-block-start: 0.35rem;
   color: var(--rr-color-bordeaux);
   font: 0.875rem/1.4 var(--rr-font-ui);
 }
-.rr_contact_form_wrapper .rr_contact_form_security {
-  min-height: 0;
-}
+
 .rr_contact_form_wrapper .rr_contact_form_actions {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
+
+.rr_contact_form_wrapper .wpcf7-submit {
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgb(42 38 32 / 8%);
+}
+
+.rr_contact_form_wrapper .wpcf7-submit:focus-visible {
+  outline: 3px solid var(--rr-color-gold);
+  outline-offset: 3px;
+}
+
 .rr_contact_form_wrapper .wpcf7-submit:disabled {
   cursor: not-allowed;
   opacity: 0.65;
@@ -507,6 +560,13 @@
   border-radius: var(--rr-radius-sm);
   font: 0.9375rem/1.5 var(--rr-font-ui);
 }
+
 .wpcf7:has(.rr_contact_form_wrapper) .wpcf7-spinner {
   margin: 0.5rem 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rr_contact_form_wrapper .rr-field {
+    transition: none;
+  }
 }
