@@ -21,3 +21,25 @@ add_action( 'wp_enqueue_scripts', function () {
         (string) filemtime( $path )
     );
 }, 30 );
+
+/**
+ * Disable automatic paragraph formatting for
+ * Contact Form 7 frontend forms only.
+ *
+ * Preserve automatic formatting for email content.
+ */
+add_filter(
+    'wpcf7_autop_or_not',
+    function ( $autop, $options ) {
+        if (
+            isset( $options['for'] ) &&
+            'form' === $options['for']
+        ) {
+            return false;
+        }
+
+        return $autop;
+    },
+    10,
+    2
+);
