@@ -42,6 +42,41 @@ Large: add `class:rr-field--lg` (16px / minimum height 52px), e.g.:
 
 Input size and appearance are independent. IDs must be unique on each page.
 
+
+## Layout modifiers
+
+Apply these classes **on the same `div`** as `.rr_contact_form_wrapper`. They are independent of the light/dark appearance and field-size classes.
+
+| Layout | Wrapper | Behavior |
+| --- | --- | --- |
+| Stacked (default) | `rr_contact_form_wrapper` | Single column; centered max-width 24rem |
+| Inline | `rr_contact_form_wrapper rr-contact-form--inline` | Three columns (name, email, submit) at 48rem and wider; stacked below 48rem |
+| Full-width stacked | `rr_contact_form_wrapper rr-contact-form--full` | One column filling the available Kadence section width |
+
+Examples:
+
+```html
+<div class="rr_contact_form_wrapper rr-contact-form--inline rr-contact-form--dark">
+  <!-- Same field and submit markup as above -->
+</div>
+```
+
+```html
+<div class="rr_contact_form_wrapper rr-contact-form--full">
+  <!-- Same field and submit markup as above -->
+</div>
+```
+
+The `--inline` and `--full` classes are **alternative layouts**; do not combine them. Use one light/dark appearance modifier at most. Form input sizes (`rr-field--lg`) remain independent.
+
+Check at 320px, 767px, 768px, desktop, and 200% zoom; ensure labels and error messages stay with their fields and the submit aligns beside the fields on desktop. The parent Kadence block determines available width.
+
+## Focus and keyboard accessibility
+
+The component styles both `:focus` and `:focus-visible` on inputs and the submit button so the focus indicator is visible for keyboard and programmatic focus. Fields receive a 3px outline with a 2px offset. The label also changes color through `:focus-within` (this is secondary feedback, not the only focus cue). The light variant uses a darker amber outline; the dark variant uses pale blue. These styles apply to stacked, inline, and full-width layouts without JavaScript.
+
+Test by pressing **Tab** through name, email, and Submit in both variants. Check that no Kadence styles suppress the outline, that 200% zoom does not clip the indicator, and that error messages remain visible. The browser focus behavior may differ when clicking versus using Tab.
+
 ## reCAPTCHA v3
 
 Configure Google reCAPTCHA v3 keys through **Contact → Integration → reCAPTCHA**. No form tag is needed. Keep development and production keys separate and out of source control. Validate actual submissions; scoring-based filtering does not guarantee zero spam.
