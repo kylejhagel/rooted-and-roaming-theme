@@ -71,6 +71,12 @@ The `--inline` and `--full` classes are **alternative layouts**; do not combine 
 
 Check at 320px, 767px, 768px, desktop, and 200% zoom; ensure labels and error messages stay with their fields and the submit aligns beside the fields on desktop. The parent Kadence block determines available width.
 
+## Focus and keyboard accessibility
+
+The component styles both `:focus` and `:focus-visible` on inputs and the submit button so the focus indicator is visible for keyboard and programmatic focus. Fields receive a 3px outline with a 2px offset. The label also changes color through `:focus-within` (this is secondary feedback, not the only focus cue). The light variant uses a darker amber outline; the dark variant uses pale blue. These styles apply to stacked, inline, and full-width layouts without JavaScript.
+
+Test by pressing **Tab** through name, email, and Submit in both variants. Check that no Kadence styles suppress the outline, that 200% zoom does not clip the indicator, and that error messages remain visible. The browser focus behavior may differ when clicking versus using Tab.
+
 ## reCAPTCHA v3
 
 Configure Google reCAPTCHA v3 keys through **Contact → Integration → reCAPTCHA**. No form tag is needed. Keep development and production keys separate and out of source control. Validate actual submissions; scoring-based filtering does not guarantee zero spam.
