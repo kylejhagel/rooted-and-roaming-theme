@@ -1,0 +1,66 @@
+// Contact Form 7 presentation; submission processing belongs to CF7 / a plugin.
+.rr_contact_form_wrapper {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 42rem;
+
+  .rr_contact_form_field {
+    display: grid;
+    gap: .35rem;
+  }
+
+  .rr-form__label {
+    margin-block-end: 0;
+  }
+
+  .wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+  }
+
+  .rr-field {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .wpcf7-not-valid {
+    border-color: var(--rr-color-bordeaux);
+  }
+
+  .wpcf7-not-valid-tip {
+    display: block;
+    margin-block-start: .35rem;
+    color: var(--rr-color-bordeaux);
+    font: .875rem/1.4 var(--rr-font-ui);
+  }
+
+  .rr_contact_form_security {
+    min-height: 0;
+  }
+
+  .rr_contact_form_actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .wpcf7-submit:disabled {
+    cursor: not-allowed;
+    opacity: .65;
+  }
+}
+
+// CF7 renders response output outside the custom inner wrapper.
+.wpcf7:has(.rr_contact_form_wrapper) {
+  .wpcf7-response-output {
+    margin: 1.25rem 0 0;
+    padding: .85rem 1rem;
+    border-radius: var(--rr-radius-sm);
+    font: .9375rem/1.5 var(--rr-font-ui);
+  }
+
+  .wpcf7-spinner {
+    margin: .5rem 0;
+  }
+}
