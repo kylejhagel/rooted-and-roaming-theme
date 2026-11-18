@@ -50,7 +50,7 @@ Apply these classes **on the same `div`** as `.rr_contact_form_wrapper`. They ar
 | Layout | Wrapper | Behavior |
 | --- | --- | --- |
 | Stacked (default) | `rr_contact_form_wrapper` | Single column; centered max-width 24rem |
-| Inline | `rr_contact_form_wrapper rr-contact-form--inline` | Two columns at 48rem and wider; stacked below 48rem; submit row spans both columns |
+| Inline | `rr_contact_form_wrapper rr-contact-form--inline` | Three columns (name, email, submit) at 48rem and wider; stacked below 48rem |
 | Full-width stacked | `rr_contact_form_wrapper rr-contact-form--full` | One column filling the available Kadence section width |
 
 Examples:
@@ -69,7 +69,7 @@ Examples:
 
 The `--inline` and `--full` classes are **alternative layouts**; do not combine them. Use one light/dark appearance modifier at most. Form input sizes (`rr-field--lg`) remain independent.
 
-Check at 320px, 767px, 768px, desktop, and 200% zoom; ensure labels and error messages stay with their fields and the submit row stays below them. The parent Kadence block determines available width.
+Check at 320px, 767px, 768px, desktop, and 200% zoom; ensure labels and error messages stay with their fields and the submit aligns beside the fields on desktop. The parent Kadence block determines available width.
 
 ## reCAPTCHA v3
 
